@@ -87,10 +87,10 @@ spin:	jmp	spin
 ###################################################################
 # boot stack
 ###################################################################
-	.p2align	PGSHIFT		# force page alignment
+	.p2align		PGSHIFT		# force page alignment
 	.globl		bootstack
 bootstack:
-	.space		KSTKSIZE
-	.globl		bootstacktop   
+	.space		KSTKSIZE	#reserve  KSTKSIZE=32K bytes,  filled with 0
+	.globl		bootstacktop   	#bootstacktop is a global symbol
 bootstacktop:
 
